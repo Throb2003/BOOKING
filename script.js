@@ -31,21 +31,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add booking to table
     const newRow = bookingTableBody.insertRow();
-    const cell1 = newRow.insertCell(0);
-    const cell2 = newRow.insertCell(1);
-    const cell3 = newRow.insertCell(2);
-    const cell4 = newRow.insertCell(3);
-    const cell5 = newRow.insertCell(4);
-    const cell6 = newRow.insertCell(5);
-    const cell7 = newRow.insertCell(6);
-
-    cell1.textContent = name;
-    cell2.textContent = email;
-    cell3.textContent = phone;
-    cell4.textContent = date;
-    cell5.textContent = time;
-    cell6.textContent = service;
-    cell7.textContent = comments;
+    newRow.innerHTML = `
+      <td>${name}</td>
+      <td>${email}</td>
+      <td>${phone}</td>
+      <td>${date}</td>
+      <td>${time}</td>
+      <td>${service}</td>
+      <td>${comments}</td>
+    `;
 
     // Show table if it was hidden
     if (bookingTable.classList.contains('hidden')) {
