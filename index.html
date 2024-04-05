@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Online Booking System</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -22,22 +23,22 @@
     <section class="booking-form-container">
       <form id="bookingForm" class="booking-form">
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" required class="w-full p-2 mb-4 border border-gray-300 rounded-md">
         
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" required class="w-full p-2 mb-4 border border-gray-300 rounded-md">
 
         <label for="phone">Phone:</label>
-        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 123-456-7890" required>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 123-456-7890" required class="w-full p-2 mb-4 border border-gray-300 rounded-md">
 
         <label for="date">Date:</label>
-        <input type="date" id="date" name="date" required>
+        <input type="date" id="date" name="date" required class="w-full p-2 mb-4 border border-gray-300 rounded-md">
 
         <label for="time">Time:</label>
-        <input type="time" id="time" name="time" required>
+        <input type="time" id="time" name="time" required class="w-full p-2 mb-4 border border-gray-300 rounded-md">
 
         <label for="service">Service:</label>
-        <select id="service" name="service" required>
+        <select id="service" name="service" required class="w-full p-2 mb-4 border border-gray-300 rounded-md">
           <option value="">Select Service</option>
           <option value="Haircut">Haircut</option>
           <option value="Massage">Massage</option>
@@ -46,28 +47,28 @@
         </select>
 
         <label for="comments">Additional Comments:</label>
-        <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+        <textarea id="comments" name="comments" rows="4" cols="50" class="w-full p-2 mb-4 border border-gray-300 rounded-md"></textarea>
 
-        <button type="submit">Book Now</button>
+        <button type="submit" class="bg-gray-900 text-white py-2 px-4 rounded-md">Book Now</button>
       </form>
-      <div id="bookingInfo" class="booking-info hidden">
-        <h2>Booking Details:</h2>
+      <div id="bookingInfo" class="border border-gray-300 rounded-lg p-4 hidden">
+        <h2 class="mb-2">Booking Details:</h2>
         <div id="bookingDetails"></div>
       </div>
     </section>
 
     <section class="booking-table-container">
-      <table id="bookingTable" class="booking-table hidden">
-        <caption>Bookings</caption>
+      <table id="bookingTable" class="w-full border-collapse border border-gray-300 mt-4 hidden">
+        <caption class="text-lg font-bold mb-2">Bookings</caption>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Service</th>
-            <th>Comments</th>
+            <th class="border border-gray-300 p-2">Name</th>
+            <th class="border border-gray-300 p-2">Email</th>
+            <th class="border border-gray-300 p-2">Phone</th>
+            <th class="border border-gray-300 p-2">Date</th>
+            <th class="border border-gray-300 p-2">Time</th>
+            <th class="border border-gray-300 p-2">Service</th>
+            <th class="border border-gray-300 p-2">Comments</th>
           </tr>
         </thead>
         <tbody id="bookingTableBody"></tbody>
@@ -75,7 +76,7 @@
     </section>
   </main>
   <footer>
-    <p>&copy; 2024 Online Booking System</p>
+    <p>&copy; 2024 Designed and Styled By Throb&TRADE</p>
   </footer>
 
   <script src="script.js"></script>
