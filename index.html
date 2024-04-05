@@ -4,69 +4,76 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Online Booking System</title>
-  <link href="styles.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
     <nav class="navigation">
       <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
     </nav>
     <h1>Online Booking System</h1>
   </header>
   <main>
-    <form id="bookingForm">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required aria-label="Name">
+    <section class="booking-form-container">
+      <form id="bookingForm" class="booking-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required class="w-full p-2 mb-4 border border-gray-300 rounded-md">
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required class="w-full p-2 mb-4 border border-gray-300 rounded-md">
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required aria-label="Email">
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 123-456-7890" required class="w-full p-2 mb-4 border border-gray-300 rounded-md">
 
-      <label for="phone">Phone:</label>
-      <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 123-456-7890" required aria-label="Phone Number">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required class="w-full p-2 mb-4 border border-gray-300 rounded-md">
 
-      <label for="date">Date:</label>
-      <input type="date" id="date" name="date" required aria-label="Date">
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time" required class="w-full p-2 mb-4 border border-gray-300 rounded-md">
 
-      <label for="time">Time:</label>
-      <input type="time" id="time" name="time" required aria-label="Time">
+        <label for="service">Service:</label>
+        <select id="service" name="service" required class="w-full p-2 mb-4 border border-gray-300 rounded-md">
+          <option value="">Select Service</option>
+          <option value="Haircut">Haircut</option>
+          <option value="Massage">Massage</option>
+          <option value="Manicure">Manicure</option>
+          <option value="Pedicure">Pedicure</option>
+        </select>
 
-      <label for="service">Service:</label>
-      <select id="service" name="service" required aria-label="Select Service">
-        <option value="">Select Service</option>
-        <option value="Haircut">Haircut</option>
-        <option value="Massage">Massage</option>
-        <option value="Manicure">Manicure</option>
-        <option value="Pedicure">Pedicure</option>
-      </select>
+        <label for="comments">Additional Comments:</label>
+        <textarea id="comments" name="comments" rows="4" cols="50" class="w-full p-2 mb-4 border border-gray-300 rounded-md"></textarea>
 
-      <label for="comments">Additional Comments:</label>
-      <textarea id="comments" name="comments" rows="4" cols="50" aria-label="Additional Comments"></textarea>
+        <button type="submit" class="bg-gray-900 text-white py-2 px-4 rounded-md">Book Now</button>
+      </form>
+      <div id="bookingInfo" class="border border-gray-300 rounded-lg p-4 hidden">
+        <h2 class="mb-2">Booking Details:</h2>
+        <div id="bookingDetails"></div>
+      </div>
+    </section>
 
-      <button type="submit">Book Now</button>
-    </form>
-    <div id="bookingInfo"></div>
-
-    <table id="bookingTable">
-      <caption>Bookings</caption>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Date</th>
-          <th>Time</th>
-          <th>Service</th>
-          <th>Comments</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Booking data will be inserted here dynamically -->
-      </tbody>
-    </table>
+    <section class="booking-table-container">
+      <table id="bookingTable" class="w-full border-collapse border border-gray-300 mt-4 hidden">
+        <caption class="text-lg font-bold mb-2">Bookings</caption>
+        <thead>
+          <tr>
+            <th class="border border-gray-300 p-2">Name</th>
+            <th class="border border-gray-300 p-2">Email</th>
+            <th class="border border-gray-300 p-2">Phone</th>
+            <th class="border border-gray-300 p-2">Date</th>
+            <th class="border border-gray-300 p-2">Time</th>
+            <th class="border border-gray-300 p-2">Service</th>
+            <th class="border border-gray-300 p-2">Comments</th>
+          </tr>
+        </thead>
+        <tbody id="bookingTableBody"></tbody>
+      </table>
+    </section>
   </main>
   <footer>
     <p>&copy; 2024 Online Booking System</p>
